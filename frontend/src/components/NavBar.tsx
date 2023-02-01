@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 type NavBarProps = {
     categories: string[]
@@ -15,14 +16,17 @@ const NavBar = ({ categories }: NavBarProps) => {
             <Navbar.Toggle aria-controls="navigointi" />
             <Navbar.Collapse>
             <Nav>
-                <Nav.Link>Kotisivu</Nav.Link>
-                <Nav.Link>Tilaa nyt!</Nav.Link>
-                <NavDropdown title="Ruokalista">
-                    <NavDropdown.Item>Kaikki</NavDropdown.Item>
+                <Nav.Link to='/' as={Link}>Kotisivu</Nav.Link>
+                <NavDropdown title='Tilaa nyt!'>
+                    <NavDropdown.Item target="_blank" href='https://www.foodora.fi/en/restaurant/s0qt/yu-sushi'>Foodora</NavDropdown.Item>
+                    <NavDropdown.Item target="_blank" href='https://wolt.com/en/fin/nokia/restaurant/yu-sushi'>Wolt</NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title='Ruokalista'>
+                    <NavDropdown.Item to='/ruokalista' as={Link}>Kaikki</NavDropdown.Item>
                         <NavDropdown.Divider />
                     {categories.map((category: string) => {
                         return (
-                            <NavDropdown.Item key={category}>
+                            <NavDropdown.Item to={`/ruokalista/${category}`} as={Link} key={category}>
                                 {(category).charAt(0).toUpperCase() + category.slice(1).replace('_', ' ')}
                             </NavDropdown.Item>
                         )

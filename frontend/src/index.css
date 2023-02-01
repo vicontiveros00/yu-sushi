@@ -4,6 +4,39 @@
   box-sizing: border-box;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 6rem;
+}
+
+.footer {
+  position: absolute;
+  padding: 1rem 0;
+  width: 100%;
+  bottom: 0;
+  color: #fff;
+}
+
+iframe {
+  border-radius: 1rem;
+  height: 20rem;
+  width: 100%;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
 /*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
 
 body {

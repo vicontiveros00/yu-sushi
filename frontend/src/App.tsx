@@ -3,10 +3,16 @@ import Pocketbase , { Record } from 'pocketbase';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import Footer from './components/Footer';
+import Koti from './components/Koti';
+import Menu from './components/Menu';
 
 const App = () => {
   const [food, setFood] = useState<Record[]>([]);
   const pb = new Pocketbase('https://yusushi.fly.dev');
+
+  const categories = ['alkuruokia', 'kanaruokia', 'sianliharuokia', 'naudanliharuokia', 'kevytruokia', 'meren_antimia', 'jalkiruokia'];
   
   useEffect(() => {
     const getSomeFood = async() => {
@@ -19,21 +25,26 @@ const App = () => {
   }, [])
   //use above function for getting all menu items
 
-  const categories = ['alkuruokia', 'kanaruokia', 'sianliharuokia', 'naudanliharuokia', 'kevytruokia', 'meren_antimia', 'jalkiruokia'];
-
   return (
     <>
       <NavBar categories={categories} />
       <Container>
-        <h1 className='mt-4 mb-4'>Tervetuloa!</h1>
+        {/*<h1 className='mt-4 mb-4'>Tervetuloa!</h1>
           {food?.sort((a: Record, b: Record) => {
             return a.numero - b.numero;
           }).map((foodItem: Record) => {
             return (
               <p key={foodItem.id}>{foodItem.numero}. {foodItem.nimi} {foodItem.hinta}</p>
             )
-          })}
-      </Container>
+          })}*/}
+          <Routes>
+            <Route path='/' element = {<Koti />} />
+            <Route path='/ruokalista' element={<Menu data={pb}/>} />
+            <Route path='/ruokalista/:kategoria' element={<Menu data={pb} />} />
+            <Route path='*' element={<Navigate to='/' />} />
+          </Routes>
+        </Container>
+        <Footer />
     </>
   )
 }
