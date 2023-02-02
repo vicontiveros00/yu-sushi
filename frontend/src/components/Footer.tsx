@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
+import svg from "../util/svg";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -18,6 +19,7 @@ const Footer = () => {
                             <br />
                             la-su: 12 - 21
                         </p>
+                        <a target='_blank' href='https://www.facebook.com/RavintolaYuSushi'>{svg.facebook} Follow us!</a>
                     </Col>
                 </Row>
                 <Row>

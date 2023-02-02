@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import convertCatNameToLegibleString from '../util/convertCatNameToLegibleString';
 
 type NavBarProps = {
     categories: string[]
@@ -27,7 +28,7 @@ const NavBar = ({ categories }: NavBarProps) => {
                     {categories.map((category: string) => {
                         return (
                             <NavDropdown.Item to={`/ruokalista/${category}`} as={Link} key={category}>
-                                {(category).charAt(0).toUpperCase() + category.slice(1).replace('_', ' ')}
+                                {convertCatNameToLegibleString(category)}
                             </NavDropdown.Item>
                         )
                     })}

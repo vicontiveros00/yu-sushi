@@ -29,18 +29,18 @@ const App = () => {
     <>
       <NavBar categories={categories} />
       <Container className='main'>
-        <h1 className='mt-4 mb-4'>Tervetuloa!</h1>
+        {/*<h1 className='mt-4 mb-4'>Tervetuloa!</h1>
           {food?.sort((a: Record, b: Record) => {
             return a.numero - b.numero;
           }).map((foodItem: Record) => {
             return (
               <p key={foodItem.id}>{foodItem.numero}. {foodItem.nimi} {foodItem.hinta}</p>
             )
-          })}
+          })}*/}
           <Routes>
             <Route path='/' element = {<Koti />} />
-            <Route path='/ruokalista' element={<Menu data={pb}/>} />
-            <Route path='/ruokalista/:kategoria' element={<Menu data={pb} />} />
+            <Route path='/ruokalista' element={<Menu data={pb} categories={categories} />} />
+            <Route path='/ruokalista/:kategoria' element={<Menu data={pb} categories={categories} />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </Container>
