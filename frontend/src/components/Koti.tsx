@@ -1,4 +1,4 @@
-import { Carousel, Container } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 //https://react-bootstrap.github.io/components/carousel/
 const Koti = () => {
     return (
@@ -17,7 +17,7 @@ const Koti = () => {
                    /> 
                 </Carousel.Item>
             </Carousel>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis recusandae accusamus iste sit sint ullam nisi quod, quo unde assumenda! Fugiat minima porro illo itaque vel debitis dolores voluptate voluptates.</p>
+            <p>(The image carousel above isnt programmed yet because vic is a lazy programmer) TEST TEXT TO TEST LAYOUT TEST TEXT Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis recusandae accusamus iste sit sint ullam nisi quod, quo unde assumenda! Fugiat minima porro illo itaque vel debitis dolores voluptate voluptates. TEST TEXT TO TEST LAYOUT TEST TEXT</p>
         </>
     )
 }

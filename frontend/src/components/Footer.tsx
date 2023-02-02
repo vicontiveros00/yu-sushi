@@ -4,12 +4,24 @@ import svg from "../util/svg";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-    /*const [isOpen, setIsOpen] = useState<boolean>();
+    const [isOpen, setIsOpen] = useState<boolean>(true);
+
+    const yuSushiIsOpen = (openingTime: string, closingTime: string) => {
+        const now = new Date();
+        const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`
+        return currentTime >= openingTime && currentTime <= closingTime;
+    }
+
+    type hoursTuple = [string, string];
+    
+    const weekdayHours: hoursTuple = ['10:30', '21:00'];
+    const weekendHours: hoursTuple = ['12:00', '21:00'];
 
     useEffect(() => {
-        const currentDate = new Date();
-        const currentTime = currentDate.getHours() * 60 + currentDate.getMinutes();
-    }, [])*/
+        const today = new Date().getDay();
+        //check if using weekend hours
+        today === 1 || today === 7 ? setIsOpen(yuSushiIsOpen(...weekendHours)) : setIsOpen(yuSushiIsOpen(...weekdayHours));
+    }, [])
 
     return (
         <div className="footer bg-dark">
@@ -26,9 +38,10 @@ const Footer = () => {
                             <br />
                             la-su: 12 - 21
                         </p>
-                        <span className="fb">
+                        {isOpen? <p>🟢 Auki nyt</p> : <p className="text-muted">🔴 Suljettu</p>}
+                        <div className="fb mb-2">
                             <a target='_blank' href='https://www.facebook.com/RavintolaYuSushi'>{svg.facebook} Seuraa meitä!</a>
-                        </span>
+                        </div>
                     </Col>
                 </Row>
                 <Row>

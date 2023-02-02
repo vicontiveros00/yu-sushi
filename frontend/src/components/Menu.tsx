@@ -67,8 +67,6 @@ const Menu = ({ data, categories }: MenuProps) => {
                             <tr key={foodItem.id}>
                                 <td>{foodItem.numero}.</td>
                                 <td>{foodItem.nimi}</td>
-                                {!kategoria && 
-                                <td>{convertCatNameToLegibleString(foodItem.collectionName)}</td>}
                                 <td>{foodItem.hinta}</td>
                             </tr>
                         )
