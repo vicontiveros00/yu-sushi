@@ -13,7 +13,7 @@ const NavBar = ({ categories }: NavBarProps) => {
   return (
     <Navbar bg="dark" variant='dark' expand="lg">
         <Container>
-            <Navbar.Brand>Yu Sushi 中国龙</Navbar.Brand>
+            <Navbar.Brand to='/' as={Link}>Yu Sushi 中国龙</Navbar.Brand>
             <Navbar.Toggle aria-controls="navigointi" />
             <Navbar.Collapse>
             <Nav>

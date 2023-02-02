@@ -15,7 +15,7 @@ body {
 
 @media screen and (max-width: 576px) {
   body {
-    margin-bottom: 35rem;
+    margin-bottom: 36rem;
   }
 }
 
@@ -43,6 +43,14 @@ iframe {
 .footer a:hover {
   text-decoration: underline;
   color: #fff;
+}
+
+.fb {
+  fill: rgba(255, 255, 255, 0.7) !important;
+}
+
+.fb:hover {
+  fill: rgb(255, 255, 255) !important;
 }
 
 /*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');

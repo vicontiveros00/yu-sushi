@@ -1,8 +1,15 @@
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap"
 import svg from "../util/svg";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    /*const [isOpen, setIsOpen] = useState<boolean>();
+
+    useEffect(() => {
+        const currentDate = new Date();
+        const currentTime = currentDate.getHours() * 60 + currentDate.getMinutes();
+    }, [])*/
 
     return (
         <div className="footer bg-dark">
@@ -19,7 +26,9 @@ const Footer = () => {
                             <br />
                             la-su: 12 - 21
                         </p>
-                        <a target='_blank' href='https://www.facebook.com/RavintolaYuSushi'>{svg.facebook} Follow us!</a>
+                        <span className="fb">
+                            <a target='_blank' href='https://www.facebook.com/RavintolaYuSushi'>{svg.facebook} Seuraa meitä!</a>
+                        </span>
                     </Col>
                 </Row>
                 <Row>
