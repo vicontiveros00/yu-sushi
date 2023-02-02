@@ -1,6 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap"
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
         <div className="footer bg-dark">
             <Container>
@@ -10,13 +12,16 @@ const Footer = () => {
                     </Col>
                     <Col>
                         <p>Välikatu 8, 37100 Nokia</p>
-                        <p><a href='tel:033423338'>📞 03 3423338</a></p>
+                        <p><a href='tel:033423338'>📞 03 342 3338</a></p>
                         <p>
-                            ma-pe 10.30 - 21
+                            ma-pe: 10.30 - 21
                             <br />
-                            la-su 12 - 21
+                            la-su: 12 - 21
                         </p>
                     </Col>
+                </Row>
+                <Row>
+                    <p className="text-muted">&#169;Yu Sushi {currentYear}</p>
                 </Row>
             </Container>
         </div>

@@ -28,15 +28,15 @@ const App = () => {
   return (
     <>
       <NavBar categories={categories} />
-      <Container>
-        {/*<h1 className='mt-4 mb-4'>Tervetuloa!</h1>
+      <Container className='main'>
+        <h1 className='mt-4 mb-4'>Tervetuloa!</h1>
           {food?.sort((a: Record, b: Record) => {
             return a.numero - b.numero;
           }).map((foodItem: Record) => {
             return (
               <p key={foodItem.id}>{foodItem.numero}. {foodItem.nimi} {foodItem.hinta}</p>
             )
-          })}*/}
+          })}
           <Routes>
             <Route path='/' element = {<Koti />} />
             <Route path='/ruokalista' element={<Menu data={pb}/>} />
