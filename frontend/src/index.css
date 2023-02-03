@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  margin-bottom: 25rem;
+  margin-bottom: 25.5rem;
 }
 
 @media screen and (max-width: 576px) {
@@ -51,6 +51,10 @@ iframe {
 
 .fb:hover {
   fill: rgb(255, 255, 255) !important;
+}
+
+.carousel img {
+  margin: 0 auto;
 }
 
 /*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');

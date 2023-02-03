@@ -20,7 +20,9 @@ const NavBar = ({ categories }: NavBarProps) => {
     return (
         <Navbar bg="dark" variant='dark' expand="sm" expanded={isExpanded}>
             <Container>
-                <Navbar.Brand to='/' as={Link}>Yu Sushi 中国龙</Navbar.Brand>
+                <Navbar.Brand to='/' as={Link} onClick={() => {
+                    setIsExpanded(false);
+                }}>Yu Sushi 中国龙</Navbar.Brand>
                 <Navbar.Toggle onClick={() => handleNavClick()} aria-controls="navigointi" />
                 <Navbar.Collapse>
                 <Nav>
